@@ -31,6 +31,59 @@
           educação infantil Estrelas do Amanhã.
         </p>
       </header>
+
+      <form id="registration-form" method="post" enctype="multipart/form-data">
+        <fieldset>
+          <legend>Informações da criança</legend>
+
+          <div class="form-group">
+            <label for="fullname">Nome completo</label>
+            <input id="fullname" name="fullname" type="text" placeholder="Nome completo" />
+          </div>
+
+          <div class="form-group">
+            <label for="date-birth">Data de nascimento</label>
+            <input id="date-birth" name="date-birth" type="date" />
+          </div>
+
+          <div class="form-group">
+            <label for="sex">Sexo</label>
+            <select id="sex" name="sex">
+              <option selected hidden>Sexo</option>
+              <option value="male">Masculino</option>
+              <option value="female">Feminino</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="medical-info">Informações médicas</label>
+            <textarea
+              id="medical-info"
+              rows="4"
+              placeholder="Informações médicas"
+            ></textarea>
+          </div>
+
+          <div class="form-group">
+            <label for="birth-certificate">Certidão de nascimento</label>
+
+            <div class="input-file__container">
+              <input
+              id="birth-certificate"
+              name="birth-certificate"
+              type="file"
+              ></input>
+
+              <div>
+                <img class="input-file__img" src="./assets/icons/interface/cloud-upload.svg" alt="ícone - Nuvem Upload">
+              </div>
+              <p>
+                Clique aqui para <br> selecionar arquivos
+              </p>
+            </div>
+          </div>
+        </fieldset>
+      </form>
     </main>
 
     <article id="hero">
