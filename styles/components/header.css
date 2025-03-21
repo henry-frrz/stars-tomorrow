@@ -1,0 +1,20 @@
+main {
+  padding: 4rem;
+  min-width: 50vw;
+}
+
+#main-header {
+  margin-bottom: 4rem;
+}
+
+.main-header__back-link {
+  gap: 0.5rem;
+}
+
+.main-header__title {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--tertiary-700);
+
+  margin-top: 1.5rem;
+}
