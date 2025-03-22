@@ -1,115 +1,126 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Archivo:ital,wdth,wght@0,62..125,100..900;1,62..125,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
-      rel="stylesheet"
-    />
-    <link rel="stylesheet" href="./styles/index.css" />
-    <link
-      rel="shortcut icon"
-      href="./assets/logos/orange-icon.svg"
-      type="image/x-icon"
-    />
-    <title>Estrelas do Amanhã - Formulário de Matrícula</title>
-  </head>
-  <body>
-    <main>
-      <header id="main-header">
-        <a class="main-header__back-link" href="#"
-          ><img src="./assets/icons/interface/arrow-left.svg" alt="" />
-          Voltar</a
-        >
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Archivo:ital,wdth,wght@0,62..125,100..900;1,62..125,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="./styles/index.css" />
+  <link rel="shortcut icon" href="./assets/logos/orange-icon.svg" type="image/x-icon" />
+  <title>Estrelas do Amanhã - Formulário de Matrícula</title>
+</head>
+<body>
+  <main>
+    <header id="main-header">
+      <a class="main-header__back-link" href="#"><img src="./assets/icons/interface/arrow-left.svg" alt="" />
+        Voltar</a>
 
-        <h1 class="main-header__title">Formulário de Matrícula</h1>
-        <p>
-          Preencha os dados abaixo para matricular seu filho na escola de
-          educação infantil Estrelas do Amanhã.
-        </p>
-      </header>
+      <h1 class="main-header__title">Formulário de Matrícula</h1>
+      <p>
+        Preencha os dados abaixo para matricular seu filho na escola de
+        educação infantil Estrelas do Amanhã.
+      </p>
+    </header>
 
-      <form id="registration-form" method="post" enctype="multipart/form-data">
-        <fieldset>
-          <legend>Informações da criança</legend>
+    <form id="registration-form" method="post" enctype="multipart/form-data">
+      <fieldset>
+        <legend>Informações da criança</legend>
 
+        <div class="form-group">
+          <label for="fullname">Nome completo</label>
+          <input id="fullname" name="fullname" type="text" placeholder="Nome completo" />
+        </div>
+
+        <div class="form-group">
+          <label for="date-birth">Data de nascimento</label>
+          <input id="date-birth" name="date-birth" type="date" />
+        </div>
+
+        <div class="form-group">
+          <label for="sex">Sexo</label>
+          <select id="sex" name="sex">
+            <option selected hidden>Sexo</option>
+            <option value="male">Masculino</option>
+            <option value="female">Feminino</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="medical-info">Informações médicas</label>
+          <textarea id="medical-info" rows="4" placeholder="Informações médicas"></textarea>
+        </div>
+
+        <div class="form-group">
+          <label for="birth-certificate">Certidão de nascimento</label>
+
+          <div class="input-file__container">
+            <input id="birth-certificate" name="birth-certificate" type="file"></input>
+
+            <div>
+              <img class="input-file__img" src="./assets/icons/interface/cloud-upload.svg" alt="ícone - Nuvem Upload">
+            </div>
+            <p>
+              Clique aqui para <br> selecionar arquivos
+            </p>
+          </div>
+        </div>
+      </fieldset>
+
+      <fieldset>
+        <legend>Endereço residencial</legend>
+
+        <div class="form-group">
+          <label for="cep">CEP</label>
+          <input id="cep" name="cep" type="number" placeholder="CEP" />
+        </div>
+
+        <div class="form-groups">
           <div class="form-group">
-            <label for="fullname">Nome completo</label>
-            <input id="fullname" name="fullname" type="text" placeholder="Nome completo" />
+            <label for="street">RUA</label>
+            <input id="street" name="street" type="text" placeholder="Rua" />
           </div>
 
           <div class="form-group">
-            <label for="date-birth">Data de nascimento</label>
-            <input id="date-birth" name="date-birth" type="date" />
+            <label for="number">Número</label>
+            <input id="number" name="number" type="number" min="0" placeholder="Número" />
           </div>
 
           <div class="form-group">
-            <label for="sex">Sexo</label>
-            <select id="sex" name="sex">
-              <option selected hidden>Sexo</option>
-              <option value="male">Masculino</option>
-              <option value="female">Feminino</option>
+            <label for="city">Cidade</label>
+            <input id="city" name="city" type="text" placeholder="Cidade" />
+          </div>
+
+          <div class="form-group">
+            <label for="state">Estado</label>
+            <select id="state" name="state">
+              <option selected hidden>Estado</option>
+              <option value="sp">SP</option>
+              <option value="rj">RJ</option>
             </select>
           </div>
+        </div>
+      </fieldset>
+    </form>
+  </main>
 
-          <div class="form-group">
-            <label for="medical-info">Informações médicas</label>
-            <textarea
-              id="medical-info"
-              rows="4"
-              placeholder="Informações médicas"
-            ></textarea>
-          </div>
+  <article id="hero">
+    <div class="hero__content">
+      <a href="/">
+        <img src="./assets/logos/orange-horizontal-emblem.svg" alt="Logo - Estrelas do Amanhã" />
+      </a>
 
-          <div class="form-group">
-            <label for="birth-certificate">Certidão de nascimento</label>
+      <strong class="hero__title">Porque cada momento de <span>aprendizado</span> conta</strong>
 
-            <div class="input-file__container">
-              <input
-              id="birth-certificate"
-              name="birth-certificate"
-              type="file"
-              ></input>
+      <p>
+        Inscreva seu filho em nossa escola e veja-o florescer em um ambiente
+        acolhedor, seguro e estimulante.
+      </p>
+    </div>
 
-              <div>
-                <img class="input-file__img" src="./assets/icons/interface/cloud-upload.svg" alt="ícone - Nuvem Upload">
-              </div>
-              <p>
-                Clique aqui para <br> selecionar arquivos
-              </p>
-            </div>
-          </div>
-        </fieldset>
-      </form>
-    </main>
-
-    <article id="hero">
-      <div class="hero__content">
-        <a href="/">
-          <img
-            src="./assets/logos/orange-horizontal-emblem.svg"
-            alt="Logo - Estrelas do Amanhã"
-          />
-        </a>
-
-        <strong class="hero__title"
-          >Porque cada momento de <span>aprendizado</span> conta</strong
-        >
-
-        <p>
-          Inscreva seu filho em nossa escola e veja-o florescer em um ambiente
-          acolhedor, seguro e estimulante.
-        </p>
-      </div>
-
-      <img
-        class="hero__img"
-        src="./assets/kindergarten-student.png"
-        alt="Estudantes de Jardim de Infância"
-      />
-    </article>
-  </body>
+    <img class="hero__img" src="./assets/kindergarten-student.png" alt="Estudantes de Jardim de Infância" />
+  </article>
+</body>
 </html>
