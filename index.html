@@ -1,126 +1,240 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link
-    href="https://fonts.googleapis.com/css2?family=Archivo:ital,wdth,wght@0,62..125,100..900;1,62..125,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
-    rel="stylesheet" />
-  <link rel="stylesheet" href="./styles/index.css" />
-  <link rel="shortcut icon" href="./assets/logos/orange-icon.svg" type="image/x-icon" />
-  <title>Estrelas do Amanhã - Formulário de Matrícula</title>
-</head>
-<body>
-  <main>
-    <header id="main-header">
-      <a class="main-header__back-link" href="#"><img src="./assets/icons/interface/arrow-left.svg" alt="" />
-        Voltar</a>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Archivo:ital,wdth,wght@0,62..125,100..900;1,62..125,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./styles/index.css" />
+    <link
+      rel="shortcut icon"
+      href="./assets/logos/orange-icon.svg"
+      type="image/x-icon"
+    />
+    <title>Estrelas do Amanhã - Formulário de Matrícula</title>
+  </head>
+  <body>
+    <main>
+      <header id="main-header">
+        <a class="main-header__back-link" href="#"
+          ><img src="./assets/icons/interface/arrow-left.svg" alt="" />
+          Voltar</a
+        >
 
-      <h1 class="main-header__title">Formulário de Matrícula</h1>
-      <p>
-        Preencha os dados abaixo para matricular seu filho na escola de
-        educação infantil Estrelas do Amanhã.
-      </p>
-    </header>
+        <h1 class="main-header__title">Formulário de Matrícula</h1>
+        <p>
+          Preencha os dados abaixo para matricular seu filho na escola de
+          educação infantil Estrelas do Amanhã.
+        </p>
+      </header>
 
-    <form id="registration-form" method="post" enctype="multipart/form-data">
-      <fieldset>
-        <legend>Informações da criança</legend>
+      <form id="registration-form">
+        <fieldset>
+          <legend>Informações da criança</legend>
 
-        <div class="form-group">
-          <label for="fullname">Nome completo</label>
-          <input id="fullname" name="fullname" type="text" placeholder="Nome completo" />
-        </div>
-
-        <div class="form-group">
-          <label for="date-birth">Data de nascimento</label>
-          <input id="date-birth" name="date-birth" type="date" />
-        </div>
-
-        <div class="form-group">
-          <label for="sex">Sexo</label>
-          <select id="sex" name="sex">
-            <option selected hidden>Sexo</option>
-            <option value="male">Masculino</option>
-            <option value="female">Feminino</option>
-          </select>
-        </div>
-
-        <div class="form-group">
-          <label for="medical-info">Informações médicas</label>
-          <textarea id="medical-info" rows="4" placeholder="Informações médicas"></textarea>
-        </div>
-
-        <div class="form-group">
-          <label for="birth-certificate">Certidão de nascimento</label>
-
-          <div class="input-file__container">
-            <input id="birth-certificate" name="birth-certificate" type="file"></input>
-
-            <div>
-              <img class="input-file__img" src="./assets/icons/interface/cloud-upload.svg" alt="ícone - Nuvem Upload">
+          <div class="form-group">
+            <label for="fullname">Nome completo</label>
+            <input
+              id="fullname"
+              required
+              name="fullname"
+              type="text"
+              placeholder="Nome completo"
+            />
+            <div class="error-msg">
+              <span class="error-msg__icon"></span>
+              Insira um nome válido
             </div>
-            <p>
-              Clique aqui para <br> selecionar arquivos
-            </p>
-          </div>
-        </div>
-      </fieldset>
-
-      <fieldset>
-        <legend>Endereço residencial</legend>
-
-        <div class="form-group">
-          <label for="cep">CEP</label>
-          <input id="cep" name="cep" type="number" placeholder="CEP" />
-        </div>
-
-        <div class="form-groups">
-          <div class="form-group">
-            <label for="street">RUA</label>
-            <input id="street" name="street" type="text" placeholder="Rua" />
           </div>
 
           <div class="form-group">
-            <label for="number">Número</label>
-            <input id="number" name="number" type="number" min="0" placeholder="Número" />
+            <label for="date-birth">Data de nascimento</label>
+            <input id="date-birth" required name="date-birth" type="date" />
+            <div class="error-msg">
+              <span class="error-msg__icon"></span>
+              Insira um data válida
+            </div>
           </div>
 
           <div class="form-group">
-            <label for="city">Cidade</label>
-            <input id="city" name="city" type="text" placeholder="Cidade" />
-          </div>
-
-          <div class="form-group">
-            <label for="state">Estado</label>
-            <select id="state" name="state">
-              <option selected hidden>Estado</option>
-              <option value="sp">SP</option>
-              <option value="rj">RJ</option>
+            <label for="sex">Sexo</label>
+            <select id="sex" required name="sex">
+              <option selected hidden>Sexo</option>
+              <option value="male">Masculino</option>
+              <option value="female">Feminino</option>
             </select>
+            <div class="error-msg">
+              <span class="error-msg__icon"></span>
+              Insira um sexo válido
+            </div>
           </div>
-        </div>
-      </fieldset>
-    </form>
-  </main>
 
-  <article id="hero">
-    <div class="hero__content">
-      <a href="/">
-        <img src="./assets/logos/orange-horizontal-emblem.svg" alt="Logo - Estrelas do Amanhã" />
-      </a>
+          <div class="form-group">
+            <label for="medical-info">Informações médicas</label>
+            <textarea
+              id="medical-info"
+              rows="4"
+              placeholder="Informações médicas"
+            ></textarea>
+          </div>
 
-      <strong class="hero__title">Porque cada momento de <span>aprendizado</span> conta</strong>
+          <div class="form-group">
+            <label for="birth-certificate">Certidão de nascimento</label>
 
-      <p>
-        Inscreva seu filho em nossa escola e veja-o florescer em um ambiente
-        acolhedor, seguro e estimulante.
-      </p>
-    </div>
+            <div class="input-file">
+              <input
+                id="birth-certificate"
+                required
+                name="birth-certificate"
+                type="file"
+              />
 
-    <img class="hero__img" src="./assets/kindergarten-student.png" alt="Estudantes de Jardim de Infância" />
-  </article>
-</body>
+              <div class="input-file__img"></div>
+
+              <p>
+                Clique aqui para <br />
+                selecionar arquivos
+              </p>
+            </div>
+          </div>
+        </fieldset>
+
+        <fieldset>
+          <legend>Endereço residencial</legend>
+
+          <div class="form-group">
+            <label for="cep">CEP</label>
+            <input
+              id="cep"
+              required
+              name="cep"
+              type="number"
+              placeholder="CEP"
+            />
+            <div class="error-msg">
+              <span class="error-msg__icon"></span>
+              Insira um CEP válido
+            </div>
+          </div>
+
+          <div class="form-groups">
+            <div class="form-group">
+              <label for="street">Rua</label>
+              <input
+                id="street"
+                required
+                name="street"
+                type="text"
+                placeholder="Rua"
+              />
+              <div class="error-msg">
+                <span class="error-msg__icon"></span>
+                Insira um rua válida
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="number">Número</label>
+              <input
+                id="number"
+                required
+                name="number"
+                type="number"
+                min="0"
+                placeholder="Número"
+              />
+              <div class="error-msg">
+                <span class="error-msg__icon"></span>
+                Insira um número válido
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="city">Cidade</label>
+              <input
+                id="city"
+                required
+                name="city"
+                type="text"
+                placeholder="Cidade"
+              />
+              <div class="error-msg">
+                <span class="error-msg__icon"></span>
+                Insira uma cidade válida
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="state">Estado</label>
+              <select id="state" required name="state">
+                <option selected disabled hidden>Estado</option>
+                <option value="ac">AC</option>
+                <option value="al">AL</option>
+                <option value="ap">AP</option>
+                <option value="am">AM</option>
+                <option value="ba">BA</option>
+                <option value="ce">CE</option>
+                <option value="df">DF</option>
+                <option value="es">ES</option>
+                <option value="go">GO</option>
+                <option value="ma">MA</option>
+                <option value="mt">MT</option>
+                <option value="ms">MS</option>
+                <option value="mg">MG</option>
+                <option value="pa">PA</option>
+                <option value="pb">PB</option>
+                <option value="pr">PR</option>
+                <option value="pe">PE</option>
+                <option value="pi">PI</option>
+                <option value="rj">RJ</option>
+                <option value="rn">RN</option>
+                <option value="rs">RS</option>
+                <option value="ro">RO</option>
+                <option value="rr">RR</option>
+                <option value="sc">SC</option>
+                <option value="sp">SP</option>
+                <option value="se">SE</option>
+                <option value="to">TO</option>
+              </select>
+
+              <div class="error-msg">
+                <span class="error-msg__icon"></span>
+                Insira um estado válido
+              </div>
+            </div>
+          </div>
+        </fieldset>
+      </form>
+    </main>
+
+    <article id="hero">
+      <div class="hero__content">
+        <a href="/">
+          <img
+            src="./assets/logos/orange-horizontal-emblem.svg"
+            alt="Logo - Estrelas do Amanhã"
+          />
+        </a>
+
+        <strong class="hero__title"
+          >Porque cada momento de <span>aprendizado</span> conta</strong
+        >
+
+        <p>
+          Inscreva seu filho em nossa escola e veja-o florescer em um ambiente
+          acolhedor, seguro e estimulante.
+        </p>
+      </div>
+
+      <img
+        class="hero__img"
+        src="./assets/kindergarten-student.png"
+        alt="Estudantes de Jardim de Infância"
+      />
+    </article>
+  </body>
 </html>
