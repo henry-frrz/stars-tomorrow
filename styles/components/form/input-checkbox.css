@@ -1,0 +1,45 @@
+.input-checkbox {
+  display: flex;
+  gap: 0.75rem;
+  text-align: left;
+  position: relative;
+
+  & input {
+    position: absolute;
+    width: 1.25rem;
+    height: 1.25rem;
+    opacity: 0;
+    cursor: pointer;
+  }
+
+  & .input-checkbox__img {
+    min-width: 1.25rem;
+    max-height: 1.25rem;
+    background-image: url('../../../assets/icons/interface/checkbox-default.svg');
+    background-size: contain;
+  }
+
+  & label {
+    margin-top: -3px;
+  }
+
+  & a {
+    color: var(--primary-200);
+    font-weight: 500;
+  }
+
+  &:has(input:not(:disabled)) {
+    &:hover,
+    &:focus-within {
+      & .input-checkbox__img {
+        background-image: url('../../../assets/icons/interface/checkbox-default--hover.svg');
+      }
+    }
+
+    &:has(:checked) {
+      & .input-checkbox__img {
+        background-image: url('../../../assets/icons/interface/checkbox-checked.svg');
+      }
+    }
+  }
+}
